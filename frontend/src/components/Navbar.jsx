@@ -20,7 +20,7 @@ const Navbar = () => {
         </p>
       </Link>
 
-      {/* Menu hehehhehehehhheheh */}
+      {/* Menu  */}
       <ul className='hidden sm:flex gap-8 text-base text-[#C2B280]'>
 
         <NavLink to='/' className='flex flex-col items-center gap-1'>
