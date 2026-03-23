@@ -4,6 +4,7 @@ import { Link, NavLink } from 'react-router-dom'
 
 const Navbar = () => {
 
+
   const [visible, setVisible] = useState(false)
 
   return (
@@ -19,7 +20,7 @@ const Navbar = () => {
         </p>
       </Link>
 
-      {/* Menu */}
+      {/* Menu hehehhehehehhheheh */}
       <ul className='hidden sm:flex gap-8 text-base text-[#C2B280]'>
 
         <NavLink to='/' className='flex flex-col items-center gap-1'>
