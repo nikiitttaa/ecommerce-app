@@ -7,11 +7,29 @@ import p_img2_2 from './p_img2_2.png'
 import p_img2_3 from './p_img2_3.png'
 import p_img2_4 from './p_img2_4.png'
 import p_img3 from './p_img3.png'
+import p_img3_1 from './p_img3_1.png'
+import p_img3_3 from './p_img3_3.png'
+import p_img3_4 from './p_img3_4.png'
 import p_img4 from './p_img4.png'
+import p_img4_2 from './p_img4_2.png'
+import p_img4_3 from './p_img4_3.png'
+import p_img4_4 from './p_img4_4.png'
 import p_img5 from './p_img5.png'
+import p_img5_2 from './p_img5_2.png'
+import p_img5_3 from './p_img5_3.png'
+import p_img5_4 from './p_img5_4.png'
 import p_img6 from './p_img6.png'
+import p_img6_2 from './p_img6_2.png'
+import p_img6_3 from './p_img6_3.png'
+import p_img6_4 from './p_img6_4.png'
 import p_img7 from './p_img7.png'
+import p_img7_2 from './p_img7_2.png'
+import p_img7_3 from './p_img7_3.png'
+import p_img7_4 from './p_img7_4.png'
 import p_img8 from './p_img8.png'
+import p_img8_2 from './p_img8_2.png'
+import p_img8_3 from './p_img8_3.png'
+import p_img8_4 from './p_img8_4.png'
 import p_img9 from './p_img9.png'
 import p_img10 from './p_img10.png'
 import p_img11 from './p_img11.png'
@@ -128,7 +146,7 @@ export const products = [
         name: "Chic Mustard Yellow Suit with Printed Bottom",
         description: "Vibrant Vibrancy: Stand out in this stunning Mustard Yellow set.",
         price: 550,
-        image: [p_img3],
+        image: [p_img3,p_img3_1,p_img3_3,p_img3_4],
         category: "Girls",
         subCategory: ["Office Wear","Long Kurti"],
         sizes: ["S", "L", "XL"],
@@ -140,7 +158,7 @@ export const products = [
         name: "Radiant Hot Pink Bandhani Print Anarkali Gown",
         description: "Celebrate Tradition: Embrace your beauty with this Hot Pink Bandhani Gown.",
         price: 599,
-        image: [p_img4],
+        image: [p_img4,p_img4_2,p_img4_3,p_img4_4],
         category: "College Girls",
         subCategory: ["Long Kurti","Traditional Set"],
         sizes: ["S", "M", "XXL"],
@@ -152,7 +170,7 @@ export const products = [
         name: "Lavender Dream Organza & Silk Set",
         description: "Elegance in Lavender: A dreamy set for your next celebration.",
         price: 800,
-        image: [p_img5],
+        image: [p_img5,p_img5_2,p_img5_3,p_img5_4],
         category: "Women",
         subCategory: ["Traditional Set",],
         sizes: ["M", "L", "XL"],
@@ -164,7 +182,7 @@ export const products = [
         name: "Boho-Chic Printed Peplum Tunic",
         description: "Desi Boho Vibe: Trendy peplum for your everyday style.",
         price: 350,
-        image: [p_img6],
+        image: [p_img6,p_img6_2,p_img6_3,p_img6_4],
         category: "Girls",
         subCategory: ["Office Wear","Short Kurti"],
         sizes: ["S", "L", "XL"],
@@ -176,7 +194,7 @@ export const products = [
         name: "Dusty Rose Silk & Floral Net Set",
         description: "Pure Sophistication: Shine in the beauty of Dusty Rose.",
         price: 800,
-        image: [p_img7],
+        image: [p_img7,p_img7_2,p_img7_3,p_img7_4],
         category: "College Girls",
         subCategory: ["Office Wear","Traditional Set"],
         sizes: ["S", "L", "XL"],
@@ -188,7 +206,7 @@ export const products = [
         name: "Royal Emerald Green Banarasi Touch Set",
         description: "Royal Heritage: A grand look for traditional festivities.",
         price: 550,
-        image: [p_img8],
+        image: [p_img8,p_img8_2,p_img8_3,p_img8_4],
         category: "College Girls",
         subCategory: ["Office Wear","Traditional Set"],
         sizes: ["S", "M", "L", "XL"],
