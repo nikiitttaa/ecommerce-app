@@ -17,6 +17,7 @@ import Orders from './pages/Orders'
 
 import bgImage from './assets/back.jpg'
 import Footer from './components/Footer'
+import SearchBar from './components/SearchBar'
 
 const App = () => {
   return (
@@ -35,7 +36,7 @@ const App = () => {
       <div className='relative z-10 px-3 sm:px-5 md:px-8 lg:px-10 max-w-none mx-auto'>
         
         <Navbar />
-
+        <SearchBar/>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/collection' element={<Collection />} />
