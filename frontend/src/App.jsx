@@ -7,6 +7,7 @@ import Navbar from './components/Navbar'
 // Pages
 import Home from './pages/Home'
 import Collection from './pages/Collection'
+import UpCycle from './pages/UpCycle'
 import About from './pages/About'
 import Contact from './pages/Contact'
 import Product from './pages/Product'
@@ -42,6 +43,7 @@ const App = () => {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/collection' element={<Collection />} />
+          <Route path='/upcycle' element={<UpCycle />} />
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/product/:productId' element={<Product />} />

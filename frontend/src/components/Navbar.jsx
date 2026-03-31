@@ -18,22 +18,36 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop Menu */}
-      <ul className='hidden sm:flex gap-8 text-base text-[#C2B280]'>
-        <NavLink to='/' className='flex flex-col items-center gap-1'>
-          <p>HOME</p>
-        </NavLink>
-
-        <NavLink to='/collection' className='flex flex-col items-center gap-1'>
-          <p>COLLECTION</p>
-        </NavLink>
-
-        <NavLink to='/about' className='flex flex-col items-center gap-1'>
-          <p>ABOUT</p>
-        </NavLink>
-
-        <NavLink to='/contact' className='flex flex-col items-center gap-1'>
-          <p>CONTACT</p>
-        </NavLink>
+      <ul className='hidden sm:flex gap-8 text-base'>
+        {[
+          { name: "HOME", path: "/" },
+          { name: "COLLECTION", path: "/collection" },
+          { name: "UPCYCLE", path: "/upcycle" },
+          { name: "ABOUT", path: "/about" },
+          { name: "CONTACT", path: "/contact" },
+        ].map((item) => (
+          <NavLink
+            key={item.name}
+            to={item.path}
+            end={item.path === "/"}
+            className={({ isActive }) =>
+              `relative pb-1 transition-all duration-300 ${
+                isActive ? "text-[#8B6F47]" : "text-[#C2B280]"
+              }`
+            }
+          >
+            {({ isActive }) => (
+              <>
+                {item.name}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] w-full transition-all duration-300 ${
+                    isActive ? "bg-[#8B6F47]" : "bg-transparent"
+                  }`}
+                ></span>
+              </>
+            )}
+          </NavLink>
+        ))}
       </ul>
 
       {/* Icons */}
@@ -73,10 +87,37 @@ const Navbar = () => {
           </div>
 
           {/* Mobile Menu Links */}
-          <NavLink onClick={() => setVisible(false)} className='py-4 pl-6 border-b' to='/'>HOME</NavLink>
-          <NavLink onClick={() => setVisible(false)} className='py-4 pl-6 border-b' to='/collection'>COLLECTION</NavLink>
-          <NavLink onClick={() => setVisible(false)} className='py-4 pl-6 border-b' to='/about'>ABOUT</NavLink>
-          <NavLink onClick={() => setVisible(false)} className='py-4 pl-6 border-b' to='/contact'>CONTACT</NavLink>
+          <ul className="flex flex-col gap-6 p-4">
+            {[
+              { name: "HOME", path: "/" },
+              { name: "COLLECTION", path: "/collection" },
+              { name: "UPCYCLE", path: "/upcycle" },
+              { name: "ABOUT", path: "/about" },
+              { name: "CONTACT", path: "/contact" },
+            ].map((item) => (
+              <NavLink
+                key={item.name}
+                to={item.path}
+                end={item.path === "/"}
+                className={({ isActive }) =>
+                  `relative pb-1 transition-all duration-300 ${
+                    isActive ? "text-[#8B6F47]" : "text-[#C2B280]"
+                  }`
+                }
+              >
+                {({ isActive }) => (
+                  <>
+                    {item.name}
+                    <span
+                      className={`absolute left-0 -bottom-0.5 h-[2px] w-full transition-all duration-300 ${
+                        isActive ? "bg-[#8B6F47]" : "bg-transparent"
+                      }`}
+                    ></span>
+                  </>
+                )}
+              </NavLink>
+            ))}
+          </ul>
 
         </div>
       </div>
