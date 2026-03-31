@@ -18,11 +18,13 @@ import Orders from './pages/Orders'
 import bgImage from './assets/back.jpg'
 import Footer from './components/Footer'
 import SearchBar from './components/SearchBar'
+import { ToastContainer, toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
   return (
     <div className='relative min-h-screen'>
-
+      
       {/* 🔥 BLUR BACKGROUND */}
       <div
         className='absolute inset-0 bg-cover bg-center blur-[1.5px] opacity-80'
@@ -34,7 +36,7 @@ const App = () => {
 
       {/* 🔥 MAIN CONTENT */}
       <div className='relative z-10 px-3 sm:px-5 md:px-8 lg:px-10 max-w-none mx-auto'>
-        
+        <ToastContainer/>
         <Navbar />
         <SearchBar/>
         <Routes>

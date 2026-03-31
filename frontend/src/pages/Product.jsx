@@ -7,9 +7,9 @@ import RelatedProducts from '../components/RelatedProducts';
 const Product = () => {
 
   const { productId } = useParams();
-  const { products } = useContext(ShopContext);
-
-  const [productData, setProductData] = useState(null);
+  const { products, currency, addToCart } = useContext(ShopContext);
+  const [productData, setProductData] = useState(false);
+  
   const [size, setSize] = useState('');
   const [image, setImage] = useState('');
 
@@ -28,6 +28,18 @@ const Product = () => {
     return <div className='text-center py-10'>Loading...</div>
   }
 
+  const handleAddToCart = () => {
+    const finalSize = customOptions.size || size;
+    if (!finalSize) {
+      alert('Please select a size');
+      return;
+    }
+    // Here you can also save customOptions.notes/color if you want
+    addToCart(productData._id, finalSize);
+    setShowCustomization(false);
+    setCustomOptions({ color: '', size: '', notes: '' });
+  };
+
   return (
     <div className='border-t pt-10'>
 
@@ -36,8 +48,6 @@ const Product = () => {
 
         {/* LEFT - IMAGE SECTION */}
         <div className='flex-1 flex gap-6'>
-
-          {/* SMALL IMAGES */}
           <div className='flex flex-col gap-4 mt-10'>
             {productData?.image?.map((item, index) => (
               <div key={index} className='w-28 h-28 rounded-xl overflow-hidden'>
@@ -54,7 +64,6 @@ const Product = () => {
             ))}
           </div>
 
-          {/* MAIN IMAGE */}
           <div className='flex-1 flex justify-center'>
             <div className='w-[480px] h-[600px] rounded-2xl overflow-hidden shadow-lg bg-white flex items-center justify-center'>
               <img 
@@ -64,7 +73,6 @@ const Product = () => {
               />
             </div>
           </div>
-
         </div>
 
         {/* RIGHT - DETAILS */}
@@ -95,7 +103,6 @@ const Product = () => {
           {/* SIZE SELECT */}
           <div className='mb-6'>
             <p className='mb-2 font-medium'>Select Size</p>
-
             <div className='flex gap-2'>
               {productData.sizes.map((item, index) => (
                 <button
@@ -114,12 +121,13 @@ const Product = () => {
             </div>
           </div>
 
-          {/* ADD TO CART */}
-          <button className='px-6 py-3 text-sm rounded-full 
-            bg-gradient-to-r from-[#f3e5d8] via-[#ffffff] to-[#f3e5d8] 
-            text-black border border-gray-300 shadow-sm hover:scale-105 transition'>
-            ADD TO CART
-          </button>
+        
+            <button 
+              onClick={()=>addToCart(productData._id,size)}
+              className='px-6 py-3 text-sm rounded-full bg-gradient-to-r from-[#f3e5d8] via-[#ffffff] to-[#f3e5d8] text-black border border-gray-300 shadow-sm hover:scale-105 transition'>
+              ADD TO CART
+            </button>
+          
 
           <hr className='mt-8 sm:w-4/5'/>
 
@@ -141,13 +149,14 @@ const Product = () => {
         </div>
         <div className='flex flex-col gap-4 border px-6 py-6 text-sm text-gray-900'>
           <p> "Not Just a Kurti, It’s Your Riwaayat."
-           Mass-market ke bheed mein apni alag pehchan banayein. Design your own ethnic masterpiece with India’s first fully customizable couture platform for the modern woman.</p>
+            Mass-market ke bheed mein apni alag pehchan banayein. Design your own ethnic masterpiece with India’s first fully customizable couture platform for the modern woman.
+          </p>
           <p>Aapka vision, hamari needle. Hamara interactive design studio aapko allow karta hai.</p>
         </div>
       </div>
 
-                {/*Related products*/}
-         <RelatedProducts category={productData.category} subCatgory={productData.subCatgory}/>       
+      {/* Related products */}
+      <RelatedProducts category={productData.category} subCatgory={productData.subCatgory}/>       
     </div>
   )
 }
